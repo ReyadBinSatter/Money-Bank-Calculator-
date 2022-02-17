@@ -1,16 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Money Bank</title>
+    <!-- css file -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- bootstrap css cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body>
-    <h1>Money Bank</h1>
-    
 
+<body>
+
+    <section class="container my-3">
+        <h1 class="my-3 name-title">Money Bank</h1>
+        <div class="row g-4">
+            <div class="col-12 col-md-5">
+                <img class="w-100" src="picture/pexels-olia-danilevich-5466820.jpg" alt="" srcset="">
+            </div>
+            <div class="col-12 col-md-7 half-bg">
+                <h3 class="name-title">Income</h3>
+                <div class="mb-3 row">
+                    <label for="income" class="col-sm-2 col-form-label">Income:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="income" placeholder="Enter Income Amount">
+                    </div>
+                </div>
+                <h3 class="name-title">Expenses</h3>
+                <div class="mb-3 row">
+                    <label for="food" class="col-sm-2 col-form-label">Food:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="food" placeholder="Enter Food Cost">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="rent" class="col-sm-2 col-form-label">Rent:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="rent" placeholder="Enter Rent Cost">
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="clothes" class="col-sm-2 col-form-label">Clothes:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="clothes" placeholder="Enter Clothes Cost">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary my-3" type="submit">Calculate</button>
+                <h3 class="name-title my-3">Total Expenses: <span id="total-expenses">00</span></h3>
+                <h3 class="name-title my-3">Balance: <span id="balance">00</span></h3>
+
+                <div class="mb-3 row g-3">
+                    <label for="save" class="col-sm-2 col-form-label">Save:</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="save" placeholder="Enter Percentage">
+
+                    </div>
+                    <div class="col-auto">
+                        <span>%</span>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary mb-3">Save</button>
+                    </div>
+                </div>
+                <h3 class="name-title my-3">Saving Amount: <span id="savings">00</span></h3>
+                <h3 class="name-title my-3">Remaining Balance: <span id="remain-balance">00</span></h3>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- bootstrap js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- javaScrept file -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
