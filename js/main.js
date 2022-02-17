@@ -32,30 +32,64 @@ function remainingBalance(savingTotal, totalBalance) {
     const remainTotalText = remainTotal.innerText;
     const remainTotalValue = parseFloat(remainTotalText);
     remainTotal.innerText = remainTotalValue + totalBalance - savingTotal;
-    console.log(remainTotal.innerText);
-
 }
+
 document.getElementById('calculate-btn').addEventListener('click', function () {
     const incomeAmount = getInput('income');
     const foodCost = getInput('food');
     const rentCost = getInput('rent');
     const clothesCost = getInput('clothes');
-
-    if (incomeAmount > 0 && foodCost > 0 && rentCost > 0 && clothesCost > 0) {
+    const success = document.getElementById('success');
+    const error1 = document.getElementById('error1');
+    const error2 = document.getElementById('error2');
+    const error3 = document.getElementById('error3');
+    if (incomeAmount >= 0 && foodCost >= 0 && rentCost >= 0 && clothesCost >= 0) {
         const cost = totalCost(foodCost, rentCost, clothesCost);
-        balanceCost(incomeAmount, cost);
+        if (incomeAmount>=cost) {
+            balanceCost(incomeAmount, cost);
+        success.style.display = 'block';
+        error1.style.display = 'none';
+        error2.style.display = 'none';
+        }
+        else{
+            error3.style.display = 'block';
+        }
+
+    }
+
+    else if (incomeAmount < 0 || foodCost < 0 || rentCost < 0 || clothesCost < 0) {
+
+        error1.style.display = 'block';
+
+        success.style.display = 'none';
+        error2.style.display = 'none';
+
+    }
+
+    else {
+
+        error2.style.display = 'block';
+
+        success.style.display = 'none';
+        error1.style.display = 'none';
 
 
     }
+
 })
 document.getElementById('save-btn').addEventListener('click', function () {
     const incomeAmount = getInput('income');
     const savePercent = getInput('save');
+    const error4 = document.getElementById('error4');
     const balance = document.getElementById('balance').innerText;
     if (savePercent > 0 && savePercent < 100) {
         const save = savingAmount(savePercent, incomeAmount);
-
-        remainingBalance(save, balance);
+        if(save < balance){
+            remainingBalance(save, balance);
+        }
+        else{
+            error4.style.display = 'block';
+        }
     }
 
 

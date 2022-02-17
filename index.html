@@ -49,8 +49,12 @@
                         <input type="text" class="form-control" id="clothes" placeholder="Enter Clothes Cost">
                     </div>
                 </div>
-                <div class="d-flex justify-content-center"><button id="calculate-btn" class="btn btn-primary my-3 cal-btn" type="submit">Calculate</button></div>
+                <p class="notify " id="error1">Enter positive number</p>
+                <p class="notify" id="error2">String is not valid. Enter positive number</p>
                 
+                <p class="notify " id="success">Successful</p>
+                <div class="d-flex justify-content-center"><button id="calculate-btn" class="btn btn-primary my-3 cal-btn" type="submit">Calculate</button></div>
+                <p class="notify" id="error3">You don't have enough money.</p>
                 <h3 class="name-title my-3">Total Expenses: <span id="total-expenses">00</span></h3>
                 <h3 class="name-title my-3">Balance: <span id="balance">00</span></h3>
 
@@ -67,6 +71,7 @@
                         <button id="save-btn" type="submit" class="btn btn-primary mb-3">Save</button>
                     </div>
                 </div>
+                <p class="notify" id="error4">You don't have enough money to savings.</p>
                 <h3 class="name-title my-3">Saving Amount: <span id="savings">00</span></h3>
                 <h3 class="name-title my-3">Remaining Balance: <span id="remain-balance">00</span></h3>
 
